@@ -55,7 +55,7 @@ Route::get('unlike/{pid}', function ($pid) {
     $posts_id = $pid;
     $users_id =auth()->user()->id;
     $delete= \App\Models\LikedPost::where('posts_id',$posts_id)->where('users_id', $users_id)->delete();
-    
+
     return redirect('/postdetails/' . $pid);
 });
 
